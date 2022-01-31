@@ -24,5 +24,5 @@ def sum_index(arr, name_file):
 
 array = create_ar(10)
 print(array)
-print(file_index('seminar_3_4/index.txt'))
-print(sum_index(array, 'seminar_3_4/index.txt'))
+print(file_index('index.txt'))
+print(sum_index(array, 'index.txt'))
