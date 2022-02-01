@@ -1,9 +1,4 @@
 #Для натурального N создать множество: 1, -3, 9, -27, 81 и т.д.
-
-def set_create(N):
-    result = []
-    for i in range(N):
-        result.append((-3)**i)
-    return result
-
-print(set_create(5))
+N = 5
+arr = list(map(lambda arr: -3 **arr, [x for x in range(N)]))
+print(arr)
