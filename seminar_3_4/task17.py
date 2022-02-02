@@ -1,10 +1,5 @@
 #Задать список из N элементов, заполненных числами из [-N, N].
 #Найти произведение элементов на указанных позициях. Позиции хранятся в файле file.txt в одной строке одно число
-def create_ar(N):
-    arr =[]
-    for i in range(-N,N+1):
-        arr.append(i)
-    return arr
 
 def file_index(name_file):
     sup_ar = []
@@ -21,8 +16,7 @@ def sum_index(arr, name_file):
         result += arr[i]
     return result
 
-
-array = create_ar(10)
+N = 10
+array = [ x for x in range(-N,N+1)]
 print(array)
-print(file_index('index.txt'))
 print(sum_index(array, 'index.txt'))
