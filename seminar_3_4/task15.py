@@ -3,12 +3,13 @@
 #[ 1, 2, 6, 24 ]
 
 def mult (N):
-    result = []
     sup = 1
     for i in range(1,N+1):
         sup *= i
-        result.append(sup)
-    return result
+    return sup
 
-print(mult(6))
+N = 6
+arr = [x for x in range(1,N+1)]
+res = list(map(mult,arr))
+print(res)
 
