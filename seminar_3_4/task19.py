@@ -7,4 +7,4 @@ def random(min,max, mode='real'):
 
     return result
 
-print(random(10,300,'int'))
+#print(random(10,300,'int'))

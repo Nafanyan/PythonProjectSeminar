@@ -1,8 +1,11 @@
-import random
+from task19 import random
 #Реализовать алгоритм перемешивания списка.
-def interfere(string):
-    for i in range(len(string)-1):
-
-    return list
-
-print(interfere([1,2,3,4,5,6,7,8,9]))
+def interfere(text):
+    for i in range(len(text)):
+        index = random(i,len(text),'int')
+        temp = text[i]
+        text[i] = text[index]
+        text[index] = temp
+    return text
+array = [i for i in range(10)]
+print(interfere(array))
