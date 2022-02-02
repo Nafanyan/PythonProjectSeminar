@@ -20,8 +20,8 @@ def dis(text):
 
 def math_square(text):
     diskrem, num_arr = dis(text)
-    if (diskrem < 0): return False
-    elif(diskrem == 0): return -num_arr[1] / (2 * num_arr[0])
+    if (diskrem < 0): return [None,None]
+    elif(diskrem == 0): return [-num_arr[1] / (2 * num_arr[0]),None]
     elif(diskrem > 0): return round((-num_arr[1] + diskrem**0.5)/(2 * num_arr[0]),2),\
                               round((-num_arr[1] - diskrem**0.5)/(2 * num_arr[0]),2)
 
