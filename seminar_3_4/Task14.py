@@ -1,10 +1,5 @@
 #Подсчитать сумму цифр в вещественном числе
-
-def sum_numb_real(num):
-    result = 0
-    for i in str(num):
-        if(i != '.'): result += int(i)
-    return result
-
-number = float(input())
-print(sum_numb_real(number))
+array = (filter(lambda arr: arr !='.',input()))
+array_int = map(lambda arr: int(arr),array)
+sum = sum(array_int)
+print(sum)
