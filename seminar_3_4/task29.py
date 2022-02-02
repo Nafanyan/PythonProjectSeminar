@@ -1,11 +1,6 @@
 #Найти НОК двух чисел
-
-def nok(number_one,number_two):
-    temp = 0
-    for i in range(1,max(number_one,number_two)):
-        if (number_one % i == 0 and number_two % i == 0): temp = i
-    return int(number_one * number_two / temp)
-
-
-
-print(nok(151,18))
+number_one,number_two = 151, 18
+array = [i for i in range(1,min(number_one,number_two)+1)]
+arr_kr = filter(lambda i : number_one % i == 0 and number_two % i == 0, array)
+result = int(number_one * number_two / max(arr_kr))
+print(result)
