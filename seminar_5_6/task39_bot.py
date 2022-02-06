@@ -3,9 +3,9 @@ import random
 def bot (quantity_sweet):
     temp = 0
     if (quantity_sweet > 6 and quantity_sweet % 7 != 0):
-        for i in range(1,6):
+        for i in range(1,7):
             if ((quantity_sweet - i) % 7 == 0): temp = i
-    elif(quantity_sweet % 7 == 0): temp = random.randint(1,7)
+    elif(quantity_sweet % 7 == 0): temp = random.randint(1,6)
     else:
         for i in range(7):
             if (quantity_sweet - i == 0): temp = i
