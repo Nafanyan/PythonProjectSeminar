@@ -7,8 +7,25 @@ def write_file(path,arr):
     file.writelines(arr)
     file.close()
 
-k = 2
-arr = [f'{random.randint(0,100)}x^{i}' for i in range(100)]
+def filt(arr):
+    res = []
+    for el in arr:
+        if ('^1' in el):
+            temp = el.find('^')
+            el = el[:temp]
+        elif ('^0' in el):
+            temp = el.find('^')
+            el = el[:temp-1]
+        if (el[0] == '0'):
+            el = ''
+        if ( el != arr[len(arr)-1]): el += ' + '
+        res.append(el)
+    res_str = "".join(res)
+
+    return res_str
+
+
+k = 5
+arr = [f'{random.randint(0,100)}x^{i}' for i in range(k+1)]
 print(arr)
-res = list(filter(lambda el: f'^{k}' in el and len(el) - 1 - el.find('^') == len(str(k)), arr))
-write_file('task33_res.txt',res)
+write_file('task33_res.txt',filt(arr))
