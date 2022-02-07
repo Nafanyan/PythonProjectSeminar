@@ -11,8 +11,7 @@ def preparation(source):
     source = source.replace('(', ' ( ')
     return source
 
-def calculate(example_str):
-    sup_arr = example_str.split()
+def calculate(sup_arr):
     i = 0
     while(i != len(sup_arr)):
         if (sup_arr[i] == '*' ):
@@ -42,7 +41,24 @@ def calculate(example_str):
         i = i + 1
     return float(sup_arr[0])
 
-example = '1-2*3'
+def prioritet(example_str):
+    support = example_str.split()
+    i = 0
+    temp = 0
+    while i!= len(support):
+        if (support[i] == '('):
+            temp = i
+        elif (support[i] == ')'):
+            support[i] = calculate(support[temp + 1:i])
+            del support[temp:i]
+            i = 0
+        i = i + 1
+    return calculate(support)
+
+
+
+
+example = '1-2*3+(21+(10-9*2)-1)'
 example = preparation(example)
-print(calculate(example))
+print(prioritet(example))
 
