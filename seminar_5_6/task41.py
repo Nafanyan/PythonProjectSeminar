@@ -56,9 +56,7 @@ def prioritet(example_str):
     return calculate(support)
 
 
-
-
-example = '1-2*3+(21+(10-9*2)-1)'
+example = '(1+2)*3'
 example = preparation(example)
 print(prioritet(example))
 
